@@ -1,0 +1,223 @@
+    :root{
+      --bg1: #0f1724;
+      --bg2: #0b2545;
+      --card: rgba(255,255,255,0.06);
+      --glass: rgba(255,255,255,0.04);
+      --accent: #60a5fa;      
+      --accent-2: #7c3aed;    
+      --muted: rgba(255,255,255,0.65);
+      --glass-border: rgba(255,255,255,0.08);
+      --success: #10b981;
+      --danger: #ef4444;
+      --radius: 16px;
+      --max-width: 920px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: dark;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      min-height:100%;
+      background: linear-gradient(160deg, var(--bg1) 0%, var(--bg2) 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 20px;
+      color: #e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      align-items:start;
+    }
+
+
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: var(--radius);
+      padding:28px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      border: 1px solid var(--glass-border);
+      position:relative;
+      overflow:hidden;
+    }
+
+    header.header {
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+    .logo {
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border:1px solid rgba(255,255,255,0.04);
+      flex-shrink:0;
+    }
+    .logo svg{width:34px;height:34px;opacity:0.95}
+
+    h1{font-size:20px;margin:0 0 2px 0;font-weight:700}
+    p.lead{margin:0;color:var(--muted);font-size:13px}
+
+    .search {
+      display:flex;
+      gap:12px;
+      margin:18px 0 22px 0;
+      align-items:center;
+    }
+    .search .input-wrap{
+      flex:1;
+      display:flex;
+      gap:8px;
+      align-items:center;
+      background:var(--glass);
+      border-radius:12px;
+      padding:10px 12px;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .search input{
+      background:transparent;
+      border:0;
+      outline:0;
+      color:inherit;
+      font-size:15px;
+      width:100%;
+      padding:6px 4px;
+    }
+    .search button{
+      appearance:none;
+      border:0;
+      padding:10px 14px;
+      border-radius:10px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:white;
+      font-weight:600;
+      cursor:pointer;
+      box-shadow: 0 6px 18px rgba(92,70,224,0.18);
+      transition:transform .15s ease;
+    }
+    .search button:active{transform:translateY(1px)}
+    .hint{font-size:13px;color:var(--muted);margin-top:6px}
+
+    .weather-card{
+      margin-top:6px;
+      display:flex;
+      gap:18px;
+      align-items:center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:18px;
+      border-radius:14px;
+      border:1px solid var(--glass-border);
+    }
+    .icon-wrap{
+      width:96px;
+      height:96px;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      flex-shrink:0;
+      position:relative;
+      overflow:hidden;
+    }
+    .icon-wrap img{width:74px;height:74px;display:block; border-radius: 10px;}
+
+    .weather-info{flex:1}
+    .city{font-size:15px;font-weight:700;margin-bottom:6px}
+    .temp{font-size:28px;font-weight:800;line-height:1;margin:0}
+    .desc{font-size:14px;color:var(--muted);margin-top:6px}
+    .meta{display:flex;gap:12px;margin-top:10px;font-size:13px;color:var(--muted)}
+
+    .side {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: var(--radius);
+      padding:18px;
+      border:1px solid var(--glass-border);
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .details-grid{
+      display:grid;
+      grid-template-columns: repeat(2,1fr);
+      gap:12px;
+    }
+    .detail {
+      background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+      padding:12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .detail h4{margin:0;font-size:12px;color:var(--muted)}
+    .detail p{margin:8px 0 0 0;font-weight:700;font-size:16px}
+
+    .big-map-placeholder{
+      height:140px;
+      border-radius:12px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+      font-size:13px;
+      border:1px dashed rgba(255,255,255,0.03);
+    }
+
+    footer.attribution{
+      margin-top:auto;
+      font-size:12px;
+      color:var(--muted);
+      text-align:center;
+    }
+
+
+    .skeleton{
+      text-align: left;
+      height: 20px;
+      position:relative;
+      overflow:hidden;
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
+      border-radius:8px;
+    }
+    .skeleton::after{
+      content:"";
+      position:absolute;
+      left:-150%;
+      top:0;
+      height:100%;
+      width:150%;
+      background: linear-gradient(90deg, rgba(255,255,255,0.00), rgba(255,255,255,0.03), rgba(255,255,255,0.00));
+      animation: shimmer 1.25s infinite;
+    }
+    @keyframes shimmer{
+      to { left:100% }
+    }
+
+
+    @media (max-width:940px){
+      .container{grid-template-columns:1fr;align-items:stretch}
+      .side{order:2}
+    }
+    @media (max-width:520px){
+      .search button{padding:8px 10px}
+      .icon-wrap{width:72px;height:72px}
+      .temp{font-size:32px}
+    }
+
+    input:focus, button:focus{outline:3px solid rgba(96,165,250,0.12); outline-offset:2px; border-radius:10px}
