@@ -18,6 +18,21 @@ btnSearch.onclick = function (){
         let wind = document.getElementById("wind")
         let pressure = document.getElementById("pressure")
         let feelsLike = document.getElementById("feels-like")
+        let map = document.querySelector(".big-map-placeholder")
+
+        map.innerHTML=`<iframe
+  src="https://www.google.com/maps?q=${encodeURIComponent(data.name)}&output=embed"
+  width="400"
+  height="140"
+  style="border:0; border-radius:15px"
+  allowfullscreen=""
+  loading="lazy"
+></iframe>
+`
+
+
+
+
 
         feelsLike.textContent = Math.round(data.main.feels_like) + "°C"
 
